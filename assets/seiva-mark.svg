@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 140" role="img" aria-label="SEIVA">
+  <defs>
+    <linearGradient id="seivaOrange" x1="10%" y1="0%" x2="55%" y2="100%">
+      <stop offset="0%" stop-color="#f5901e"/>
+      <stop offset="50%" stop-color="#d9591c"/>
+      <stop offset="100%" stop-color="#7a2210"/>
+    </linearGradient>
+    <linearGradient id="seivaGreen" x1="20%" y1="0%" x2="65%" y2="100%">
+      <stop offset="0%" stop-color="#2f8f3c"/>
+      <stop offset="45%" stop-color="#45c151"/>
+      <stop offset="100%" stop-color="#1d7a2f"/>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(58,20) rotate(-8)">
+    <path fill="url(#seivaOrange)" d="
+      M 18 0
+      C 30 3, 39 14, 40 27
+      C 40 37, 35 44, 27 48
+      C 30 41, 29 34, 23 30
+      C 19 35, 18 42, 23 49
+      C 13 47, 4 40, 1 30
+      C -2 17, 3 6, 15 1
+      C 16 0.5, 17 0, 18 0
+      Z" />
+  </g>
+
+  <g transform="translate(100,-5) rotate(6)">
+    <path fill="url(#seivaGreen)" d="
+      M 24 78
+      C 12 75, 3 64, 2 51
+      C 2 41, 7 33, 15 28
+      C 12 36, 13 43, 19 47
+      C 23 42, 24 35, 19 27
+      C 29 29, 38 36, 41 47
+      C 44 60, 39 72, 27 77
+      C 26 77.5, 25 78, 24 78
+      Z" />
+  </g>
+</svg>
