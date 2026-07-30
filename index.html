@@ -77,7 +77,7 @@
   }
 
   .brand img {
-    width: 84px;
+    width: 56px;
     height: auto;
     filter: drop-shadow(0 0 22px rgba(69, 193, 81, 0.35)) drop-shadow(0 0 10px rgba(217, 89, 28, 0.25));
   }
@@ -123,6 +123,8 @@
     letter-spacing: 0.01em;
     transition: transform 150ms ease, border-color 150ms ease, background 150ms ease;
     cursor: pointer;
+    appearance: none;
+    font-family: inherit;
   }
 
   .link-btn:hover {
@@ -169,6 +171,8 @@
 
   .link-btn.forest {
     border-color: rgba(217, 89, 28, 0.25);
+    font: inherit;
+    text-align: left;
   }
 
   .link-btn.forest:hover {
@@ -177,6 +181,47 @@
 
   .link-btn.forest .icon {
     color: #e2874a;
+  }
+
+  .chevron.down {
+    transition: transform 200ms ease;
+  }
+
+  #forestToggle[aria-expanded="true"] .chevron.down {
+    transform: rotate(180deg);
+  }
+
+  .forest-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 250ms ease, opacity 200ms ease, margin-top 250ms ease;
+    opacity: 0;
+    margin-top: 0;
+  }
+
+  .forest-panel.open {
+    max-height: 200px;
+    opacity: 1;
+    margin-top: 10px;
+  }
+
+  .forest-panel p {
+    margin: 0;
+    padding: 16px 20px;
+    background: rgba(217, 89, 28, 0.08);
+    border: 1px solid rgba(217, 89, 28, 0.2);
+    border-radius: 14px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.55;
+    color: var(--text);
+  }
+
+  .forest-panel a {
+    color: #e2874a;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
   }
 
   footer {
@@ -192,7 +237,7 @@
       padding-top: 72px;
     }
     .brand img {
-      width: 96px;
+      width: 64px;
     }
   }
 
@@ -214,7 +259,7 @@
     </div>
 
     <nav class="links" aria-label="SEIVA links">
-      <a class="link-btn" href="#" target="_blank" rel="noopener">
+      <a class="link-btn" href="https://53db3bfc.seiva-site.pages.dev/#" target="_blank" rel="noopener">
         <span class="icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="9"/>
@@ -227,7 +272,7 @@
         </span>
       </a>
 
-      <a class="link-btn" href="#" target="_blank" rel="noopener">
+      <a class="link-btn" href="https://www.linkedin.com/company/seiva-forest/" target="_blank" rel="noopener">
         <span class="icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="currentColor">
             <path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6S0 4.88 0 3.5 1.11 1 2.49 1s2.49 1.12 2.49 2.5zM.5 8.25h4v14.75h-4zM8.5 8.25h3.83v2.02h.05c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.67 4.8 6.14v8.65h-4v-7.67c0-1.83-.03-4.18-2.55-4.18-2.55 0-2.94 1.99-2.94 4.05v7.8h-4z"/>
@@ -239,19 +284,24 @@
         </span>
       </a>
 
-      <a class="link-btn forest" href="#" target="_blank" rel="noopener">
-        <span class="icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22V13"/>
-            <path d="M12 13c0-4.5-3-7-7-7 0 4.5 3 7 7 7z"/>
-            <path d="M12 13c0-5 3.5-8 8-8 0 5-3.5 8-8 8z"/>
-          </svg>
-        </span>
-        <span class="label">Save a Forest</span>
-        <span class="chevron" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
-        </span>
-      </a>
+      <div class="forest-wrap">
+        <button type="button" class="link-btn forest" id="forestToggle" aria-expanded="false" aria-controls="forestPanel">
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22V13"/>
+              <path d="M12 13c0-4.5-3-7-7-7 0 4.5 3 7 7 7z"/>
+              <path d="M12 13c0-5 3.5-8 8-8 0 5-3.5 8-8 8z"/>
+            </svg>
+          </span>
+          <span class="label">Save a Forest</span>
+          <span class="chevron down" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </button>
+        <div class="forest-panel" id="forestPanel" role="region" aria-hidden="true">
+          <p>Are you interested in protecting your land with SEIVA or know anyone who might be? Leave us an email at <a href="mailto:contact@seivaforest.pt">contact@seivaforest.pt</a>.</p>
+        </div>
+      </div>
     </nav>
 
     <footer>&copy; <span id="year"></span> SEIVA. All rights reserved.</footer>
@@ -259,6 +309,18 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    (function () {
+      var toggle = document.getElementById('forestToggle');
+      var panel = document.getElementById('forestPanel');
+      if (!toggle || !panel) return;
+      toggle.addEventListener('click', function () {
+        var isOpen = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!isOpen));
+        panel.setAttribute('aria-hidden', String(isOpen));
+        panel.classList.toggle('open', !isOpen);
+      });
+    })();
 
     (function () {
       var canvas = document.getElementById('bg');
